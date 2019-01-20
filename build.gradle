@@ -1,0 +1,80 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+sourceCompatibility = 1.7
+
+repositories {
+	jcenter()
+	mavenCentral()
+	maven {
+		url "https://raw.github.com/kristian/system-hook/mvn-repo/"
+	}
+	maven {
+		url "https://jitpack.io/"
+	}
+	maven {
+		url "https://oss.sonatype.org/content/repositories/snapshots/"
+	}
+	flatDir {
+		dirs 'lib'
+	}
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src'
+		}
+		resources {
+			srcDir 'src'
+		}
+	}
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+	compile 'org.eclipse.jetty.aggregate:jetty-all:9.4.5.v20170502'
+	compile 'org.freemarker:freemarker:2.3.25-incubating'
+	compile 'commons-codec:commons-codec:1.10'
+	compile 'org.apache.commons:commons-collections4:4.0'
+	compile 'org.apache.commons:commons-lang3:3.3.2'
+	compile 'commons-io:commons-io:2.4'
+	compile 'com.lmax:disruptor:3.3.0'
+	compile 'org.apache.logging.log4j:log4j-api:2.2'
+	compile 'org.apache.logging.log4j:log4j-core:2.2'
+	compile 'org.apache.logging.log4j:log4j-jul:2.2'
+	compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.2'
+	compile 'com.google.code.gson:gson:2.3.1'
+	compile 'de.jensd:fontawesomefx:8.5'
+	compile 'com.yuvimasory:orange-extensions:1.3.0'
+	compile 'com.1stleg:jnativehook:2.1.0'
+	compile 'com.github.strikerx3:jxinput:ca55984'
+	compile 'com.github.sarxos:webcam-capture:0.3.10'
+	compile 'com.twilio.sdk:twilio:7.9.1'
+	compile 'org.bitlet:weupnp:0.1.4'
+	compile name: 'huelocalsdk'
+	compile name: 'huesdkresources'
+	compile name: 'simplecaptcha', version: '1.2.1'
+	compile name: 'jl1.0.1'
+	compile name: 'mp3spi1.9.5'
+	compile name: 'tritonus_share'
+	compile 'net.dv8tion:JDA:3.3.1_281'
+	compile 'org.mp4parser:isoparser:1.9.31'
+}
+
+task copyLibs(type: Copy) {
+	into "${buildDir}/libs/nmo_lib"
+	from configurations.compile.collect { it }
+}
+jar {
+  manifest {
+    attributes(
+      'Class-Path': configurations.compile.collect { "nmo_lib/" + it.getName() }.join(' '),
+      'Main-Class': 'nmo.Main'
+    )
+  }
+}
+jar.dependsOn copyLibs
