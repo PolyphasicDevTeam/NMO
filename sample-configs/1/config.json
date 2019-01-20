@@ -1,0 +1,365 @@
+{
+  "scheduleName": "DUAL CORE 4",
+  "schedule": [
+    {
+      "start": 60,
+      "end": 155,
+      "name": "GRAVEYARD CORE",
+      "type": "CORE",
+      "approachWarning": 5
+    },
+    {
+      "start": 300,
+      "end": 395,
+      "name": "DAWN CORE",
+      "type": "CORE",
+      "approachWarning": 5
+    },
+    {
+      "start": 540,
+      "end": 565,
+      "name": "MORNING NAP",
+      "type": "NAP",
+      "approachWarning": 5
+    },
+    {
+      "start": 780,
+      "end": 805,
+      "name": "LUNCH NAP",
+      "type": "NAP",
+      "approachWarning": 5
+    },
+    {
+      "start": 1020,
+      "end": 1045,
+      "name": "AFTERNOON NAP",
+      "type": "NAP",
+      "approachWarning": 5
+    },
+    {
+      "start": 1260,
+      "end": 1285,
+      "name": "EVENING NAP",
+      "type": "NAP",
+      "approachWarning": 5
+    }
+  ],
+  "timers": [
+    {
+      "name": "DEFAULT TIMER",
+      "secondsForFirstWarning": 300,
+      "secondsForSubsequentWarnings": 10
+    }
+  ],
+  "oversleepWarningThreshold": 5,
+  "garbageCollectionFrequency": 3600,
+  "events": {
+    "coreApproaching": [
+      "/noise/2"
+    ],
+    "coreStarted": [],
+    "coreEnded": [
+      "/noise/0"
+    ],
+    "napApproaching": [
+      "/noise/2"
+    ],
+    "napStarted": [],
+    "napEnded": [
+      "/noise/0"
+    ],
+    "siestaApproaching": [],
+    "siestaStarted": [],
+    "siestaEnded": [],
+    "afkApproaching": [],
+    "afkStarted": [],
+    "afkEnded": [],
+    "activityWarning1": [
+      "/pavlok/vibration",
+      "/noise/1"
+    ],
+    "activityWarning2": [
+      "/pavlok/shock",
+	  "/cmd/0",
+      "/noise/1"	  
+    ],
+    "oversleepWarning": [
+      "/pavlok/shock",
+      "/noise/3",
+      "/discord/0"
+    ],
+    "pauseInitiated": [],
+    "pauseCancelled": [],
+    "pauseExpired": [],
+	"custom": [
+	 {
+        "name": "At end of first core sleep",
+        "days": [
+          "SUN",
+          "MON",
+          "TUE",
+          "WED",
+          "THU",
+          "FRI",
+          "SAT"
+        ],
+        "times": [
+          155
+        ],
+        "actions": [
+          "/discord/1"
+        ]
+     },
+     {
+        "name": "At end of second core sleep",
+        "days": [
+          "SUN",
+          "MON",
+          "TUE",
+          "WED",
+          "THU",
+          "FRI",
+          "SAT"
+        ],
+        "times": [
+          395
+        ],
+        "actions": [
+          "/discord/2"
+        ]
+      }
+	]
+  },
+  "integrations": {
+    "keyboard": {
+      "enabled": true
+    },
+    "mouse": {
+      "enabled": true
+    },
+    "xboxController": {
+      "enabled": true
+    },
+    "midiTransmitter": {
+      "enabled": true,
+      "transmitters": [
+        "Alesis Recital "
+      ]
+    },
+    "webUI": {
+      "enabled": true,
+      "openUiLocally": false,
+      "jettyPort": 19992,
+      "webcams": {
+        "CAMERA 1": "Microsoft® LifeCam Cinema(TM) 2",
+        "CAMERA 2": "Microsoft® LifeCam HD-3000 0",
+        "CAMERA 3": "SplitCam Video Driver 3"
+      },
+      "webcamSecurityKey": "Yeah I deleted this",
+      "allowRemotePauseControl": false,
+      "readProxyForwardingHeaders": false,
+      "ddns": {
+        "enabled": true,
+        "provider": "https://domains.google.com/",
+        "domain": "yeahideletedthis.nmo.polyphasic.net",
+        "username": "Yeah I deleted this",
+        "password": "Yeah I deleted this",
+        "updateFrequency": 300
+      },
+      "ultiwakerAPI": {
+        "enabled": true,
+        "framesToAverage": 20,
+        "matchPercentageToResetTimer": 75
+      }
+    },
+    "pavlok": {
+      "enabled": true,
+      "auth": {
+        "access_token": "Yeah I deleted this",
+        "token_type": "bearer",
+        "expires_in": 2592000,
+        "refresh_token": "Yeah I deleted this",
+        "scope": "user",
+        "created_at": 1494973303,
+        "device": "pavlok"
+      }
+    },
+    "twilio": {
+      "enabled": true,
+      "accountSID": "Yeah I deleted this",
+      "authToken": "Yeah I deleted this",
+      "numberFrom": "+1 234 567 8901",
+      "callingURI": "http://twimlets.com/holdmusic?Bucket\u003dcom.twilio.music.ambient",
+      "phoneNumbers": [
+        {
+          "name": "FIRST PHONE",
+          "number": "+1 234 567 8901",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "SECOND PHONE",
+          "number": "+1 234 567 8901",
+          "hidden": false,
+          "secret": false
+        }
+      ]
+    },
+    "philipsHue": {
+      "enabled": true,
+      "bridgeIP": "Yeah I deleted this",
+      "bridgeUsername": "Yeah I deleted this",
+      "lights": [
+        "FGS lightbulb"
+      ]
+    },
+    "tplink": {
+      "enabled": true,
+      "devices": [
+        {
+          "name": "FGS DESK FAN",
+          "description": "A somewhat crappy low-speed fan located on my desk and aimed at my face.",
+          "ipAddress": "172.25.37.103",
+          "hidden": false,
+          "secret": false
+        }
+      ]
+    },
+    "wemo": {
+      "enabled": false,
+      "devices": [
+        {
+          "name": "Whatever",
+          "description": "Some device located at some place",
+          "ipAddress": "172.25.37.111",
+          "hidden": false,
+          "secret": false
+        }
+      ]
+    },
+    "noise": {
+      "enabled": true,
+      "noises": [
+        {
+          "name": "noise1",
+          "description": "noise1",
+          "path": "C:\\files\\noise1.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "noise2",
+          "description": "noise2",
+          "path": "C:\\files\\noise2.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "noise3",
+          "description": "noise3",
+          "path": "C:\\files\\noise3.mp3",
+          "hidden": false,
+          "secret": true
+        },
+        {
+          "name": "noise4",
+          "description": "noise4",
+          "path": "C:\\files\\noise4.mp3",
+          "hidden": false,
+          "secret": false
+        }
+      ]
+    },
+    "cmd": {
+      "enabled": true,
+      "commands": [
+        {
+          "name": "CHANGE SOUND-OUT TO SPEAKERS",
+          "description": "Sets the sound output device to Speakers.",
+          "command": [
+            "C:\\files\\nircmd", "setdefaultsounddevice", "\"Speakers\""
+          ],
+          "workingDir": "C:\\files",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "CHANGE SOUND-OUT TO HEADPHONES",
+          "description": "Sets the sound output device to Headphones.",
+          "command": [
+            "C:\\files\\nircmd", "setdefaultsounddevice", "\"Headphones\""
+          ],
+          "workingDir": "C:\\files",
+          "hidden": false,
+          "secret": false
+        }
+      ]
+    },
+    "fileWriter": {
+      "scheduleName": false,
+      "scheduleStartedOn": false,
+      "scheduleLastOversleep": false,
+      "schedulePersonalBest": false,
+      "timeToNextSleepBlock": false
+    },
+    "discord": {
+      "enabled": true,
+      "authToken": "Yeah I deleted this",
+      "messages": [
+        {
+          "name": "OVERSLEEPING MESSAGE",
+          "description": "Sends a message to the NMO Watch Group on Discord.",
+          "targetType": "SERVER",
+          "targetID": 370561888259670016,
+          "message": "\u003c@\u0026370561458465144833\u003e I appear to be oversleeping. FGS"
+        },
+        {
+          "name": "CORE 1 CHECK MESSAGE",
+          "description": "Sends a message to the NMO Watch Group on Discord.",
+          "targetType": "SERVER",
+          "targetID": 370561888259670016,
+          "message": "\u003c@\u0026370561458465144833\u003e My graveyard core just ended, please check on me to make sure I woke up"
+        },
+        {
+          "name": "CORE 2 CHECK MESSAGE",
+          "description": "Sends a message to the NMO Watch Group on Discord.",
+          "targetType": "SERVER",
+          "targetID": 370561888259670016,
+          "message": "\u003c@\u0026370561458465144833\u003e My dawn core just ended, please check on me to make sure I woke up"
+        }
+      ]
+    },
+    "iterator": {
+      "enabled": true,
+      "iterators": [
+        {
+          "name": "ANNOYING NOISES",
+          "actions": [
+            "/noise/0",
+            "/noise/1",
+            "/noise/2",
+            "/noise/3"
+          ],
+          "hidden": false,
+          "secret": false
+        }
+      ]
+    },
+    "randomizer": {
+      "enabled": true,
+      "randomizers": [
+        {
+          "name": "ANNOYING NOISES",
+          "actions": [
+            "/noise/0",
+            "/noise/1",
+            "/noise/2",
+            "/noise/3"
+          ],
+          "hidden": false,
+          "secret": false
+        }
+      ]
+    }
+  }
+}
