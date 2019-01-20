@@ -1,0 +1,359 @@
+{
+  "scheduleName": "UBERMAN",
+  "schedule": [
+    {
+      "start": 120,
+      "end": 140,
+      "name": "NAP 1",
+      "type": "NAP",
+      "approachWarning": 5
+    },
+    {
+      "start": 360,
+      "end": 380,
+      "name": "NAP 2",
+      "type": "NAP",
+      "approachWarning": 5
+    },
+    {
+      "start": 600,
+      "end": 620,
+      "name": "NAP 3",
+      "type": "NAP",
+      "approachWarning": 5
+    },
+    {
+      "start": 840,
+      "end": 860,
+      "name": "NAP 4",
+      "type": "NAP",
+      "approachWarning": 5
+    },
+    {
+      "start": 1080,
+      "end": 1100,
+      "name": "NAP 5",
+      "type": "NAP",
+      "approachWarning": 5
+    },
+    {
+      "start": 1320,
+      "end": 1340,
+      "name": "NAP 6",
+      "type": "NAP",
+      "approachWarning": 5
+    }
+  ],
+  "oversleepWarningThreshold": 5,
+  "garbageCollectionFrequency": 3600,
+  "timers": [
+    {
+      "name": "DEFAULT TIMER",
+      "secondsForFirstWarning": 120,
+      "secondsForSubsequentWarnings": 10
+    }
+  ],
+  "events": {
+    "coreApproaching": [],
+    "coreStarted": [],
+    "coreEnded": [],
+    "napApproaching": [
+      "/cmd/0",
+      "/noise/12"
+    ],
+    "napStarted": [],
+    "napEnded": [],
+    "siestaApproaching": [],
+    "siestaStarted": [],
+    "siestaEnded": [],
+    "afkApproaching": [],
+    "afkStarted": [],
+    "afkEnded": [],
+    "activityWarning1": [
+      "/cmd/0",
+      "/noise/7"
+    ],
+    "activityWarning2": [
+      "/cmd/0",
+      "/noise/2",
+      "/noise/3",
+      "/noise/4",
+      "/noise/5",
+      "/noise/6"
+    ],
+    "oversleepWarning": [
+      "/cmd/4",
+      "/noise/0"
+    ],
+    "pauseInitiated": [],
+    "pauseCancelled": [],
+    "pauseExpired": [],
+	"custom": []
+  },
+  "integrations": {
+    "keyboard": {
+      "enabled": true
+    },
+    "mouse": {
+      "enabled": true
+    },
+    "xboxController": {
+      "enabled": true
+    },
+    "midiTransmitter": {
+      "enabled": false,
+      "transmitters": []
+    },
+    "webUI": {
+      "enabled": true,
+      "openUiLocally": false,
+      "jettyPort": 19992,
+      "webcams": {
+        "WEBCAM": "Integrated Webcam 0"
+      },
+      "webcamSecurityKey": "",
+      "allowRemotePauseControl": false,
+      "readProxyForwardingHeaders": false,
+      "ddns": {
+        "enabled": false,
+        "provider": "",
+        "domain": "",
+        "username": "",
+        "password": "",
+        "updateFrequency": 300
+      },
+      "ultiwakerAPI": {
+        "enabled": false,
+        "framesToAverage": 20,
+        "matchPercentageToResetTimer": 75
+      }
+    },
+    "pavlok": {
+      "enabled": false
+    },
+    "twilio": {
+      "enabled": false,
+      "accountSID": "",
+      "authToken": "",
+      "numberFrom": "",
+      "callingURI": "http://twimlets.com/holdmusic?Bucket\u003dcom.twilio.music.ambient",
+      "phoneNumbers": []
+    },
+    "philipsHue": {
+      "enabled": false,
+      "bridgeIP": "",
+      "bridgeUsername": "",
+      "lights": []
+    },
+    "tplink": {
+      "enabled": false,
+      "devices": []
+    },
+    "wemo": {
+      "enabled": false,
+      "devices": []
+    },
+    "noise": {
+      "enabled": true,
+      "noises": [
+        {
+          "name": "UBERALARM",
+          "description": "",
+          "path": "C:\\alarm\\alarm.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "ALARMS",
+          "description": "",
+          "path": "C:\\alarm\\Alarms.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "SIREN",
+          "description": "",
+          "path": "C:\\alarm\\Siren.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "SONAR",
+          "description": "",
+          "path": "C:\\alarm\\Sonar.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "MILITARY ALARM",
+          "description": "",
+          "path": "C:\\alarm\\Military alarm.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "ALARM",
+          "description": "",
+          "path": "C:\\alarm\\Alarm clock.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "BEEP",
+          "description": "",
+          "path": "C:\\alarm\\Beep.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "SUSPENSE",
+          "description": "",
+          "path": "C:\\alarm\\Dun dun dun.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "XYLOPHONE",
+          "description": "",
+          "path": "C:\\alarm\\Xylophone.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "HORNS",
+          "description": "",
+          "path": "C:\\alarm\\Horns.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "GUITAR",
+          "description": "",
+          "path": "C:\\alarm\\Guitar.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "BELL",
+          "description": "",
+          "path": "C:\\alarm\\Ringing bell.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "CHIME",
+          "description": "",
+          "path": "C:\\alarm\\Chime.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "The Shattering - Scream Of The Butterfly",
+          "description": "",
+          "path": "C:\\alarm\\The Shattering - Scream Of The Butterfly.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "The Shattering - The Shattering",
+          "description": "",
+          "path": "C:\\alarm\\The Shattering - The Shattering.mp3",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "Vektor - Tetrastructural Minds",
+          "description": "",
+          "path": "C:\\alarm\\Vektor - Tetrastructural Minds.mp3",
+          "hidden": false,
+          "secret": false
+        }
+      ]
+    },
+    "cmd": {
+      "enabled": true,
+      "commands": [
+        {
+          "name": "UNMUTE SOUND-OUT",
+          "description": "Unmutes the sound output device.",
+          "command": [
+            "C:\\exe\\NirCmd\\nircmd.exe",
+            "mutesysvolume",
+            "0"
+          ],
+          "workingDir": "C:\\exe\\NirCmd",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "SET SOUND-OUT VOLUME TO 32%",
+          "description": "Sets the sound output device volume to 32%.",
+          "command": [
+            "C:\\exe\\NirCmd\\nircmd.exe",
+            "setsysvolume",
+            "20971"
+          ],
+          "workingDir": "C:\\exe\\NirCmd",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "SET SOUND-OUT VOLUME TO 60%",
+          "description": "Sets the sound output device volume to 60%.",
+          "command": [
+            "C:\\exe\\NirCmd\\nircmd.exe",
+            "setsysvolume",
+            "39321"
+          ],
+          "workingDir": "C:\\exe\\NirCmd",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "SET SOUND-OUT VOLUME TO 80%",
+          "description": "Sets the sound output device volume to 80%.",
+          "command": [
+            "C:\\exe\\NirCmd\\nircmd.exe",
+            "setsysvolume",
+            "52428"
+          ],
+          "workingDir": "C:\\exe\\NirCmd",
+          "hidden": false,
+          "secret": false
+        },
+        {
+          "name": "SET SOUND-OUT VOLUME TO 100%",
+          "description": "Sets the sound output device volume to 100%.",
+          "command": [
+            "C:\\exe\\NirCmd\\nircmd.exe",
+            "setsysvolume",
+            "65535"
+          ],
+          "workingDir": "C:\\exe\\NirCmd",
+          "hidden": false,
+          "secret": false
+        }
+      ]
+    },
+    "fileWriter": {
+      "scheduleName": false,
+      "scheduleStartedOn": false,
+      "scheduleLastOversleep": false,
+      "schedulePersonalBest": false,
+      "timeToNextSleepBlock": false
+    },
+    "discord": {
+      "enabled": false,
+	  "authToken": "",
+	  "messages": []
+	},
+    "iterator": {
+      "enabled": false,
+      "iterators": []
+    },
+    "randomizer": {
+      "enabled": false,
+      "randomizers": []
+    }
+  }
+}
